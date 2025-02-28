@@ -117,5 +117,5 @@ Feel free to submit a PR or open an issue! 🚀
 ---
 
 ## 📜 License
-This project is **© 2025 Kaiburr LLC.** All rights reserved.
+This project is **© 2025 Kaiburrassignment LLC.** All rights reserved.
 
