@@ -6,7 +6,6 @@ import {
   EditOutlined,
   OrderedListOutlined,
   PlusOutlined,
-  SearchOutlined,
 } from "@ant-design/icons";
 import { Menu } from "antd";
 
@@ -17,7 +16,7 @@ const Navbar = () => {
       theme="dark"
       mode="inline"
       onClick={(event: any) => navigate(event.key)}
-      defaultSelectedKeys={["/"]}
+      defaultSelectedKeys={[window.location.pathname]}
       items={[
         {
           key: "/",

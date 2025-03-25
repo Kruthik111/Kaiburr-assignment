@@ -68,7 +68,9 @@ const Create = () => {
           return { ...prev, ["id"]: data.length + 1 };
         })
       )
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   useEffect(() => {
@@ -76,9 +78,7 @@ const Create = () => {
   }, []);
 
   async function createTask() {
-    // console.log(task);
-
-    await fetch("http://localhost:8080/tasks", {
+    await fetch("http://localhost:8080/tasks/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const Create = () => {
           );
           setTimeout(() => {
             navigate("/");
-          }, 3000);
+          }, 2000);
         }
         return res.json();
       })
@@ -105,9 +105,8 @@ const Create = () => {
   return (
     <div>
       {contextHolder}
-      {/* <button onClick={openNotification(true)}>Home</button> */}
       <Form
-        name="basic"
+        name="createform"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
@@ -151,6 +150,7 @@ const Create = () => {
               backgroundColor: "#000",
               color: "green",
               fontWeight: "bold",
+              height: "90px",
             }}
             autoCorrect="false"
           />
@@ -158,7 +158,7 @@ const Create = () => {
 
         <Form.Item label={null}>
           <Button type="primary" htmlType="submit">
-            Submit
+            Createk
           </Button>
         </Form.Item>
       </Form>

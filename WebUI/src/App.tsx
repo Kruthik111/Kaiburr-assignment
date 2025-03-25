@@ -1,19 +1,21 @@
 import "./App.css";
-import { ConfigProvider, Flex, Layout, theme, Typography } from "antd";
+import { ConfigProvider, Layout, theme, Typography } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
+
+import logo from "./assets/logo1.jpg";
 
 import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router";
-import Home from "./Pages/Home";
+import Home from "./Pages/TaskView";
 import Create from "./Pages/Create";
 
 function App() {
   const screens = useBreakpoint();
 
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { borderRadiusLG },
   } = theme.useToken();
 
   return (
@@ -47,7 +49,7 @@ function App() {
             }}
           >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ED1ACLfmvU6EgPeeZZw2X2ytLBfHXPWh5A&s"
+              src={logo}
               alt=""
               style={{
                 width: 60,
@@ -73,7 +75,7 @@ function App() {
               margin: "24px 16px",
               padding: 24,
               minHeight: 280,
-              background: colorBgContainer,
+              background: "#d4d4d4",
               borderRadius: borderRadiusLG,
               overflow: "scroll",
               maxHeight: "95dvh",

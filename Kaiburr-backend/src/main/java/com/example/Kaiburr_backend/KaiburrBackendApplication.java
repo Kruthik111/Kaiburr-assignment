@@ -14,14 +14,4 @@ public class KaiburrBackendApplication {
 		SpringApplication.run(KaiburrBackendApplication.class, args);
 	}
 
-
-//	@Bean
-//	public WebMvcConfigurer configure(){
-//		return new WebMvcConfigurer() {
-//			@Override
-//			public void addCorsMapppings(CorsRegistry reg){
-//				reg.addMapping(("/*").allowedOrigins("*"));
-//			}
-//		};
-//	}
 }

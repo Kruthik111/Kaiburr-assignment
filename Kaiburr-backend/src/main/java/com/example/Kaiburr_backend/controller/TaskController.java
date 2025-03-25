@@ -13,10 +13,8 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 
-//@CrossOrigin(origins = "http://localhost:5173",allowedHeaders = "*")
-
 @RestController
-@CrossOrigin(origins = "http://localhost:5173",allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:5175",allowedHeaders = "*")
 @RequestMapping("/tasks")
 @RequiredArgsConstructor
 public class TaskController {
@@ -35,7 +33,7 @@ public class TaskController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         System.out.println("requested");
         return ResponseEntity.ok(taskRepository.save(task));
